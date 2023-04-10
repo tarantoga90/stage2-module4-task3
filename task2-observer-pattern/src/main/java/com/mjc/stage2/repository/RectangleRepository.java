@@ -1,5 +1,7 @@
 package com.mjc.stage2.repository;
 
+import com.mjc.stage2.Observable;
+import com.mjc.stage2.Observer;
 import com.mjc.stage2.entity.Rectangle;
 
 import java.util.ArrayList;
@@ -36,4 +38,6 @@ public class RectangleRepository {
     public List<Rectangle> getRectangles() {
         return Collections.unmodifiableList(rectangles);
     }
+
+
 }
