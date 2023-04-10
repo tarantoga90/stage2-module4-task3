@@ -21,6 +21,7 @@ public class TextComponent extends AbstractTextComponent{
 
             if (this.getComponentType() == TextComponentType.SENTENCE) {
                 sb.append("\\. ");
+
             }
 
             if (this.getComponentType() == TextComponentType.WORD) {
