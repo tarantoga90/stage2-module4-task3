@@ -21,6 +21,7 @@ public class TextComponent extends AbstractTextComponent{
 
             if (component.getComponentType() == TextComponentType.SYMBOL) {
                 sb.append(component.operation());
+                continue;
             }
 
             if (i == 0 || componentList.get(i - 1).getComponentType() == TextComponentType.SYMBOL) {
