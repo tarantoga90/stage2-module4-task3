@@ -16,7 +16,18 @@ public class TextComponent extends AbstractTextComponent{
     public String operation() {
         StringBuilder sb = new StringBuilder();
         for (AbstractTextComponent c : componentList) {
+
             sb.append(c.operation());
+
+            if (this.getComponentType() == TextComponentType.SENTENCE) {
+                sb.append("\\. ");
+            }
+
+            if (this.getComponentType() == TextComponentType.WORD) {
+                sb.append(" ");
+            }
+
+
         }
         return sb.toString();
     }
