@@ -15,21 +15,21 @@ public class TextComponent extends AbstractTextComponent{
     @Override
     public String operation() {
         StringBuilder sb = new StringBuilder();
-        for (AbstractTextComponent c : componentList) {
 
-            sb.append(c.operation());
+        for (int i = 0; i < componentList.size(); i++) {
+            AbstractTextComponent component = componentList.get(i);
 
-            if (this.getComponentType() == TextComponentType.SENTENCE) {
-                sb.append("\\. ");
-
+            if (component.getComponentType() == TextComponentType.SYMBOL) {
+                sb.append(component.operation());
             }
 
-            if (this.getComponentType() == TextComponentType.WORD) {
-                sb.append(" ");
+            if (i == 0 || componentList.get(i - 1).getComponentType() == TextComponentType.SYMBOL) {
+                sb.append(component.operation());
+            } else {
+                sb.append(component.getComponentType().getDelimiter()).append(component.operation());
             }
-
-
         }
+
         return sb.toString();
     }
 
